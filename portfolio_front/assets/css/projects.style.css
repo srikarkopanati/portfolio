@@ -1,0 +1,103 @@
+:root {
+    --project-space: 0.5rem;
+    --project-border-color: #252527;
+    --project-text-color: smoke;
+    --project-bg-color: #171719;
+    --project-footer-height: 80px;
+    --project-footer-cubic-bezier: cubic-bezier(.45, -0.39, .68, 1.41);
+    --project-footer-animation-time: 1s;
+}
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.project-card {
+    background: var(--project-bg-color);
+    border: 1px solid var(--project-border-color);
+    border-radius: 0.5rem;
+    width: 100%;
+    position: relative;
+}
+
+.project-card-body {
+    padding: 1.5rem;
+    
+}
+
+.project-name {
+    padding: 0.8rem !important;
+    margin: 0 !important;
+}
+
+.project-desc {
+    width: 100%;
+    padding: 0.8rem;
+    white-space: wrap;
+    overflow: visible;
+    text-overflow: clip;
+    transition: 0.2s;
+}
+
+.project-card-footer {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+    height: var(--project-footer-height);
+}
+
+.project-card-action {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 10px; /* Moves the button lower */
+    justify-content: flex-start; /* Aligns to left */
+    background: transparent; /* Removes background */
+    position: relative;
+}
+
+.project-redirect-link {
+    display: inline-block; /* Prevents large box effect */
+    border: 1px solid var(--project-border-color);
+    border-radius: 5px;
+    padding: 3px 10px; /* Makes the button compact */
+    font-size: 0.9rem; /* Adjust font size */
+    background: var(--project-border-color);
+    color: white;
+    text-decoration: none; /* Removes underline */
+    max-width: fit-content; /* Ensures it doesn’t stretch */
+    text-align: center;
+}
+
+.project-redirect-link:hover {
+    background: #333; /* Slight hover effect */
+}
+
+.animation-project-card-link-slide {
+    animation: project-card-link-slide ease-in-out var(--project-footer-animation-time);
+}
+
+@keyframes project-card-link-slide {
+    0% {
+        transform: translate(0, calc(var(--project-footer-height) * -2));
+    }
+    80% {
+        transform: translate(0, 0);
+    }
+    90% {
+        transform: translate(0, calc(var(--project-footer-height) * -0.05));
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.project-redirect-link-icon {
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1;
+}
